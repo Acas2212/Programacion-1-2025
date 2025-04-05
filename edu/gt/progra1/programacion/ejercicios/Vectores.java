@@ -17,50 +17,44 @@ public class Vectores {
         Leer un vector de N números enteros.Calcular la suma mínima excluyendo el número más grande.
         Calcular la suma máxima excluyendo el número más pequeño.
         Imprimir ambas sumas.
- Ejemplo de entrada: [1, 3, 5, 7, 9]
- Ejemplo de salida: 
+        Ejemplo de entrada: [1, 3, 5, 7, 9]
+        Ejemplo de salida: 
           Suma mínima: 16  
           Suma máxima: 24  
      * @param args
      * @param args
      */
+    
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Leer la cantidad de números que el usuario desea ingresar
+        
         System.out.print("Ingrese la cantidad de números: ");
         int n = scanner.nextInt();
 
-        // Crear un vector para almacenar los números
         int[] numeros = new int[n];
 
-        // Leer los números ingresados por el usuario
         System.out.println("Ingrese los números:");
         for (int i = 0; i < n; i++) {
             numeros[i] = scanner.nextInt();
         }
 
-        // Calcular la suma mínima y máxima
         calcularSumas(numeros);
     }
 
     public static void calcularSumas(int[] numeros) {
-        // Ordenar el vector
         Arrays.sort(numeros);
 
-        // Calcular la suma mínima excluyendo el número más grande
         int sumaMinima = 0;
         for (int i = 0; i < numeros.length - 1; i++) {
             sumaMinima += numeros[i];
         }
 
-        // Calcular la suma máxima excluyendo el número más pequeño
         int sumaMaxima = 0;
         for (int i = 1; i < numeros.length; i++) {
             sumaMaxima += numeros[i];
         }
 
-        // Imprimir ambas sumas
         System.out.println("Suma mínima: " + sumaMinima);
         System.out.println("Suma máxima: " + sumaMaxima);
     }
@@ -78,23 +72,18 @@ public class Vectores {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer la cantidad de números que el usuario desea ingresar
         System.out.print("Ingrese la cantidad de números: ");
         int n = scanner.nextInt();
 
-        // Crear un vector para almacenar los números
         int[] numeros = new int[n];
 
-        // Leer los números ingresados por el usuario
         System.out.println("Ingrese los números:");
         for (int i = 0; i < n; i++) {
             numeros[i] = scanner.nextInt();
         }
 
-        // Reordenar el vector colocando primero los pares y luego los impares
         reordenarVector(numeros);
 
-        // Imprimir el vector reordenado
         System.out.println("Vector reordenado:");
         for (int num : numeros) {
             System.out.print(num + " ");
@@ -106,21 +95,18 @@ public class Vectores {
         int[] resultado = new int[n];
         int index = 0;
 
-        // Colocar primero los números pares en el vector resultado
         for (int i = 0; i < n; i++) {
             if (numeros[i] % 2 == 0) {
                 resultado[index++] = numeros[i];
             }
         }
 
-        // Colocar los números impares en el vector resultado
         for (int i = 0; i < n; i++) {
             if (numeros[i] % 2 != 0) {
                 resultado[index++] = numeros[i];
             }
         }
 
-        // Copiar el vector resultado al vector original
         System.arraycopy(resultado, 0, numeros, 0, n);
     }
     /**
@@ -138,24 +124,19 @@ public class Vectores {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer la cantidad de números que el usuario desea ingresar
         System.out.print("Ingrese la cantidad de números: ");
         int n = scanner.nextInt();
 
-        // Crear un vector para almacenar los números
         int[] numeros = new int[n];
 
-        // Leer los números ingresados por el usuario
         System.out.println("Ingrese los números:");
         for (int i = 0; i < n; i++) {
             numeros[i] = scanner.nextInt();
         }
 
-        // Leer el número objetivo X
         System.out.print("Ingrese el número objetivo X: ");
         int x = scanner.nextInt();
 
-        // Buscar y mostrar el par de números cuya suma sea igual a X
         encontrarPar(numeros, x);
     }
 
@@ -185,27 +166,21 @@ public class Vectores {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer la cantidad de números que el usuario desea ingresar
         System.out.print("Ingrese la cantidad de números: ");
         int n = scanner.nextInt();
 
-        // Crear un vector para almacenar los números
         int[] numeros = new int[n];
 
-        // Leer los números ingresados por el usuario
         System.out.println("Ingrese los números:");
         for (int i = 0; i < n; i++) {
             numeros[i] = scanner.nextInt();
         }
 
-        // Leer el número de posiciones k
         System.out.print("Ingrese el número de posiciones k: ");
         int k = scanner.nextInt();
 
-        // Rotar el vector k posiciones hacia la derecha
         int[] resultado = rotarDerecha(numeros, k);
 
-        // Imprimir el vector rotado
         System.out.println("Vector rotado:");
         for (int num : resultado) {
             System.out.print(num + " ");
@@ -216,15 +191,12 @@ public class Vectores {
         int n = numeros.length;
         int[] resultado = new int[n];
         
-        // Asegurarse de que k sea menor que n
         k = k % n;
 
-        // Copiar los últimos k elementos al inicio del vector resultado
         for (int i = 0; i < k; i++) {
             resultado[i] = numeros[n - k + i];
         }
 
-        // Copiar los primeros n-k elementos al final del vector resultado
         for (int i = k; i < n; i++) {
             resultado[i] = numeros[i - k];
         }
@@ -243,23 +215,18 @@ public class Vectores {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Leer la cantidad de números que el usuario desea ingresar
         System.out.print("Ingrese la cantidad de números: ");
         int n = scanner.nextInt();
 
-        // Crear un vector para almacenar los números
         int[] numeros = new int[n];
 
-        // Leer los números ingresados por el usuario
         System.out.println("Ingrese los números:");
         for (int i = 0; i < n; i++) {
             numeros[i] = scanner.nextInt();
         }
 
-        // Encontrar la mayor subsecuencia consecutiva
         int[] subsecuencia = encontrarLongestConsecutive(numeros);
 
-        // Imprimir la longitud y la mayor subsecuencia consecutiva
         System.out.println("Mayor subsecuencia consecutiva: " + subsecuencia.length + " " + Arrays.toString(subsecuencia));
     }
 
